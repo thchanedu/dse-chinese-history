@@ -1,39 +1,35 @@
 # 中史溫習加油站
 
-一個適合 GitHub Pages 的靜態網站，包含秦漢、魏晉南北朝及隋唐的默書和選擇題練習。網站不需安裝套件或執行建置程序。
+本資源包為現有預覽版的靜態網站，包含默書溫習、MC 挑戰、隋唐皇帝措施配對遊戲，以及秦漢歷屆試題。無需安裝套件或建置。
 
-## 發布到 GitHub Pages
+## 更新現有 GitHub 儲存庫
 
-1. 在 GitHub 建立儲存庫。
-2. 解壓資源包，把**資料夾內的所有檔案與 `assets` 資料夾**上載到儲存庫根目錄；`index.html` 應與 `README.md` 在同一層。
-3. 在儲存庫頁面點選 **Settings → Pages**。
-4. 在 **Build and deployment → Source** 選擇 **Deploy from a branch**，然後選擇 `main` 分支及 `/(root)` 資料夾，按 **Save**。如果你的預設分支名稱不同，選擇實際存放檔案的分支。
-5. 等候部署完成，回到 **Settings → Pages**，使用頁面顯示的網址開啟網站。
+1. 把 ZIP 解壓。打開解壓後的資料夾，確認當中能直接看到 `index.html`、`assets` 資料夾及其他 `.js` 檔案。
+2. 開啟 GitHub 上的 `dse-chinese-history` 儲存庫，按 **Add file → Upload files**。
+3. 把解壓後資料夾**裏面的檔案和 `assets` 資料夾**上載至儲存庫根目錄；不要把 ZIP 直接上載，也不要把整個解壓資料夾再包一層。GitHub 提示同名檔案時，以上載的新版本取代。
+4. 按 **Commit changes** 儲存。如果儲存庫有保護分支，請依 GitHub 的提示使用其他分支及合併流程。
+5. 在 **Settings → Pages** 確認 **Source** 為 **Deploy from a branch**，分支為 `main`（或你的實際預設分支），資料夾為 `/(root)`，並按 **Save**。
+6. 等待部署完成，再在 **Settings → Pages** 點開網站網址。如果看到舊版，重新整理網頁。
 
-GitHub 官方說明：[設定 GitHub Pages 發布來源](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
+`.nojekyll` 是 GitHub Pages 的隱藏設定檔，使用命令列或支援顯示隱藏檔案的方式上載即可；此網站沒有需要 Jekyll 處理的內容。GitHub Pages 會從所選分支和資料夾發布。
 
-## 在自己電腦預覽
+## 電腦預覽
 
-在此資料夾開啟終端機，執行以下指令，再在瀏覽器開啟 `http://localhost:8000/`：
+在此資料夾開啟終端機，執行 `python3 -m http.server 8000`，然後在瀏覽器開啟 `http://localhost:8000/`；按 `Ctrl+C` 結束。
 
-```sh
-python3 -m http.server 8000
-```
+## 重要設定與存取
 
-按 `Ctrl+C` 停止伺服器。
+- 網站登入密碼為 `dse2027`。此示範密碼在前端程式中，無法真正保護內容；知道連結的人可查看網站原始碼中的密碼、題目及答案。
+- 網站包含歷屆試題原 PDF 及其頁面圖片。若使用公開 GitHub 儲存庫或公開 GitHub Pages，訪客可以存取這些檔案。公開發布前請確認相關內容及圖片的使用權限。
+- 現有登入狀態及作答內容不會跨裝置保存；歷屆試題的試寫內容在重新整理後會清除。
+- 「清」單元暫時不能進入；必修乙部、選修單元六及其他朝代的歷屆試題待補充。
 
-## 登入密碼及資料存取
+## 檔案說明
 
-現有示範登入密碼是 `dse2027`。密碼檢查在瀏覽器內執行，密碼及題庫都包含在網站檔案中；任何訪客都可透過檢視原始碼取得，**不構成真正的存取保護**。GitHub Pages 若設為公開，網頁、題目、答案和圖片也可被公眾讀取。請確認教材及圖片有適當的發布權限，並不要把個人資料或私人密碼放進這些檔案。
-
-若日後需要真正限制學生登入、保護題庫或跨裝置保存答題紀錄，需要另外建立後端及帳戶驗證系統。現有的登入狀態只保存在瀏覽器工作階段；默書及 MC 作答不會上傳或跨裝置保存。
-
-## 主要檔案
-
-- `index.html`：首頁、登入、單元導覽及版面樣式。
-- `mc-data.js`：各課選擇題、選項與答案；`mc.js` 負責選擇題互動。
-- `qin-data.js`、`qin.js`：秦始皇默書內容及互動。
-- `lessons-data.js`、`lessons.js`：其他課題默書內容及互動。
-- `assets/history-characters.png`：平台人物及書本圖示。
-
-甲部的清單元尚未提供默書內容；乙部及婦女史為待補充單元。題目與參考答案應在公開發布前按教學需要覆核。
+- `index.html`：網站頁面、樣式、登入及單元導覽。
+- `mc.js`、`mc-data.js`：選擇題操作與題庫。
+- `qin.js`、`qin-data.js`：秦始皇默書溫習。
+- `lessons.js`、`lessons-data.js`：其他課題默書溫習。
+- `past-papers.js`、`assets/papers/`：歷屆試題導覽及原始資料。
+- `emperor-match.js`：隋唐皇帝措施配對挑戰，支援觸控拖曳與點選。
+- `assets/history-characters.png`：人物及書本圖示。
