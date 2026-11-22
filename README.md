@@ -1,6 +1,6 @@
 # 中史溫習加油站
 
-本資源包為現有預覽版的靜態網站，包含默書溫習、MC 挑戰、隋唐皇帝措施配對遊戲，以及秦漢歷屆試題。無需安裝套件或建置。
+本資源包為現有預覽版的靜態網站，包含默書溫習、秦漢／魏晉南北朝／隋唐深入重點、MC 挑戰、隋唐皇帝措施配對遊戲，以及秦漢歷屆試題。無需安裝套件或建置。
 
 ## 更新現有 GitHub 儲存庫
 
@@ -28,8 +28,10 @@
 
 - `index.html`：網站頁面、樣式、登入及單元導覽。
 - `mc.js`、`mc-data.js`：選擇題操作與題庫。
-- `qin.js`、`qin-data.js`：秦始皇默書溫習。
+- `qin.js`、`qin-data.js`：秦始皇默書溫習；`qin-deep.js`：秦朝速亡原因深入重點。
 - `lessons.js`、`lessons-data.js`：其他課題默書溫習。
+- `wei-deep.js`、`wei-deep-data.js`：魏晉南北朝深入重點。
+- `suitang-deep.js`、`suitang-deep-data.js`：隋唐三位皇帝的深入重點。
 - `past-papers.js`、`assets/papers/`：歷屆試題導覽及原始資料。
 - `emperor-match.js`：隋唐皇帝措施配對挑戰，支援觸控拖曳與點選。
 - `assets/history-characters.png`：人物及書本圖示。
